@@ -5,15 +5,19 @@ const connect = function() {
     host: 'localhost',
     port: 3000
   });
+
   conn.setEncoding('utf8');
+
+  conn.on('connect', () => {
+    console.log("Successfully connected to game server.");
+    conn.write("Name: JAS");
+  });
+
+  conn.on('data', data => {
+    console.log(data);
+  });
 
   return conn;
 };
-
-const conn = connect();
-
-conn.on('data', data => {
-  console.log(data);
-});
 
 module.exports = { connect };
