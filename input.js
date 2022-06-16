@@ -1,5 +1,6 @@
 let connection;
 
+// canned messages
 const msg = "Say: ";
 const glhf = "glhf!";
 const gg = "gg!";
@@ -15,6 +16,7 @@ const setupInput = function(conn) {
   });
   return stdin;
 };
+// user inputs to move and communicate
 const handleUserInput = (key) => {
   const stdout = process.stdout;
   if (key === '\u0003') {

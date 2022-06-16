@@ -1,3 +1,4 @@
+// constant values
 const IP = 'localhost';
 const PORT = 3000;
 
