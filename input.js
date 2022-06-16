@@ -1,5 +1,9 @@
 let connection;
 
+const msg = "Say: ";
+const glhf = "glhf!";
+const gg = "gg!";
+
 const setupInput = function(conn) {
   connection = conn;
   const stdin = process.stdin;
@@ -28,6 +32,12 @@ const handleUserInput = (key) => {
   }
   if (key === 'd') {
     connection.write("Move: right");
+  }
+  if (key === "q") {
+    connection.write(msg + glhf);
+  }
+  if (key === 'e') {
+    connection.write(msg + gg);
   }
 };
 
